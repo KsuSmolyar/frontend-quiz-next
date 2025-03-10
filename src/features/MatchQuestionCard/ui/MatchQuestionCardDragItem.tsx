@@ -5,7 +5,7 @@ import classNames from 'classnames'
 type MatchQuestionCardDragItemProps = {
   data: string
   clearDraggedElement?: () => void
-  index?: number
+  index?: string | null
   isCanDrag?: boolean
 }
 export const MatchQuestionCardDragItem = ({

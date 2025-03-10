@@ -17,7 +17,7 @@ export const MatchQuestionCardVariants = ({
   const [{ isDragging }, dropRef] = useDrop({
     accept: 'match',
     drop(data: { data: string; index: number }) {
-      onAddVariant({ text: data.data, id: data.index })
+      onAddVariant({ text: data.data, id: data.index.toString() })
     },
     collect: (monitor) => ({
       isDragging: monitor.isOver(),
@@ -35,7 +35,9 @@ export const MatchQuestionCardVariants = ({
       }}
     >
       {variants.map((variant, index) => {
-        return <MatchQuestionCardDragItem key={index} index={variant.id} data={variant.text} />
+        return (
+          <MatchQuestionCardDragItem key={index} index={variant.id} data={variant.text ?? ''} />
+        )
       })}
     </div>
   )

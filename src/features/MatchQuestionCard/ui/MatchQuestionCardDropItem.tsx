@@ -21,11 +21,11 @@ export const MatchQuestionCardDropItem = ({
   isCorrect,
   isCanDrag,
 }: MatchQuestionCardDropItemProps) => {
-  const [draggedElement, setDraggedElement] = useState<{ text: string; index: number } | null>(null)
+  const [draggedElement, setDraggedElement] = useState<{ text: string; index: string } | null>(null)
   const [{ isDragging }, dropRef] = useDrop({
     accept: 'match',
     drop(data: { data: string; index: number }) {
-      setDraggedElement({ text: data.data, index: data.index })
+      setDraggedElement({ text: data.data, index: data.index.toString() })
       if (draggedElement) {
         onAddVariant({ text: draggedElement.text, id: draggedElement.index.toString() })
       }
