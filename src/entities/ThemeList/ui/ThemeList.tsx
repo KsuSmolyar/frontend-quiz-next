@@ -4,11 +4,7 @@ import styles from '../ThemeList.module.css'
 import { ThemeCard } from '../../../shared/ui/ThemeCard'
 import Link from 'next/link'
 
-import { useTheme } from '@payloadcms/ui'
-
 export const ThemeList = ({ themeList }: ThemeListProps) => {
-  const { autoMode, setTheme, theme } = useTheme()
-
   return (
     <ul className={styles.themeList}>
       {themeList.map((theme, index) => {
