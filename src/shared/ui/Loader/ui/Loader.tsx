@@ -8,7 +8,7 @@ export const Loader = ({ className }: LoaderProps) => {
     <div className={classNames(styles.loader, className)}>
       <Image
         className={styles.loaderImg}
-        src={'/api/media/file/tube-spinner.svg'}
+        src={'/tube-spinner.svg'}
         alt={'лоадер'}
         width={100}
         height={100}

@@ -8,7 +8,7 @@ export const ThemeCard = ({ id, title, description, count }: ThemeCardProps) => 
       <div className={styles.themeCardContainer}>
         <Image
           className={styles.themeCardImg}
-          src={`/api/media/file/icon-${title.toLowerCase()}.png`}
+          src={`/icon-${title.toLowerCase()}.png`}
           alt={`логотип ${title}`}
           width={100}
           height={100}
