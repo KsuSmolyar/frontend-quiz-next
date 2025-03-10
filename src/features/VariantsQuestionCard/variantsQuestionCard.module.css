@@ -1,0 +1,14 @@
+.variantsQuestionCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacingS);
+    font-size: var(--fz16);
+}
+
+.isCorrect {
+    border-color: var(--colorGreen);
+}
+
+.isWrong {
+    border-color: var(--colorRed);
+}

@@ -1,0 +1,15 @@
+.loader {
+    --loaderImgMaxWidth: 12.5rem;
+    display: flex;
+    justify-content: center;
+    height: inherit;
+
+    .loaderImg{
+        max-width: var(--loaderImgMaxWidth);
+        width: 100%;
+
+        @media(max-width: 768px) {
+            --loaderImgMaxWidth: 10rem;
+        }
+    }
+}

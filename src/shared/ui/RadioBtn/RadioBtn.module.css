@@ -1,0 +1,68 @@
+.radioBtn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+
+    .radioBtnInput {
+        display: none;
+    }
+
+    .radioBtnCustomRadio {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: 1px solid var(--colorLight);
+        border-radius: 50%;
+        flex-shrink: 0;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: transparent;
+            display: block;
+            border-radius: 50%;
+            transition: backgroundColor 0.3s linear;
+        }
+    }
+
+    input[type="radio"]:checked + .radioBtnCustomRadio {
+       &::before {
+           background-color: var(--colorLight);
+       }
+    }
+
+    /* input[type="radio"]:checked {
+        --radioBtnColor: var(--colorLight);
+    } */
+}
+
+.radioBtn.correct {
+    color: var(--colorGreen);
+
+    .radioBtnCustomRadio {
+        border: 1px solid var(--colorGreen);
+    }
+
+    input[type="radio"]:checked + .radioBtnCustomRadio {
+        background-color: var(--colorGreen);
+    }
+}
+
+.radioBtn.wrong {
+    color: var(--colorRed);
+
+    .radioBtnCustomRadio {
+        border: 1px solid var(--colorRed);
+    }
+
+    
+    input[type="radio"]:checked + .radioBtnCustomRadio {
+        background-color: var(--colorRed);
+    }
+}

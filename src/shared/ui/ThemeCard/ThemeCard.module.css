@@ -1,0 +1,38 @@
+.themeCard {
+    --themeCardImgSize: 8rem;
+    --themeCardFz: 2rem;
+    --themeCardBgCol: transparent;
+    --themeCardContainerBgCol: var(--colorDark);
+    display: flex;
+    /* align-items: center; */
+    gap: var(--spacingL);
+    padding: var(--spacingS);
+    border: 1px solid var(--colorLight);
+    border-radius: 1rem;
+    color: var(--colorLight);
+    background-color: var(--themeCardBgCol);
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+
+    &:hover {
+        --themeCardBgCol: var(--colorGray10);
+    }
+
+    .themeCardContainer {
+        text-align: center;
+        border: .5px solid var(--colorLight);
+        padding: var(--spacingXS);
+        min-width: 12rem;
+        border-radius: 1rem;
+        background-color: var(--themeCardContainerBgCol);
+    }
+
+    .themeCardImg {
+        width: var(--themeCardImgSize);
+        height: var(--themeCardImgSize);
+    }
+
+    .themeCardTitle {
+        font-size: var(--themeCardFz);
+    }
+}

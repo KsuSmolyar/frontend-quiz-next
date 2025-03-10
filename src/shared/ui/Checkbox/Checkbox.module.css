@@ -1,0 +1,52 @@
+.checkbox {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+
+  .checkboxInput {
+    appearance: none;
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 0.2);
+    border-radius: 2px;
+    flex-shrink: 0;
+    border: 1px solid var(--colorWhite);
+    cursor: pointer;
+
+    &::after {
+        content: "\2714";
+        position: absolute;
+        top: -5px;
+        left: 2px;
+        width: 0px;
+        height: 0px;
+        font-size: 2.25rem;
+        overflow: hidden;
+      }
+  }
+
+  .checkboxInput:checked {
+    &::after {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+  }
+}
+
+.checkbox.correct {
+  color: var(--colorGreen);
+  .checkboxInput {
+    border: 1px solid var(--colorGreen);
+  }
+}
+
+.checkbox.wrong {
+  color: var(--colorRed);
+  .checkboxInput {
+    border: 1px solid var(--colorRed);
+  }
+}

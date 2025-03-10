@@ -1,0 +1,24 @@
+.container {
+    max-width: var(--siteMaxWidth);
+    width: 100%;
+    margin: auto;
+    padding: 0 var(--gridPadding);
+}
+
+.main {
+    padding-block: var(--spacingXXL);
+    min-height: 80vh;
+}
+
+.title {
+    font-size: var(--fz32);
+    margin-bottom: 3rem;
+
+    @media(max-width: 768px) {
+        margin-bottom: 2rem;
+    }
+}
+
+.preloader {
+    height: 40vh;
+}

@@ -1,0 +1,55 @@
+:root[data-theme="light"] {
+  --background-color: #fafafa;
+  --textColor: rgb(27, 27, 31);
+}
+
+:root[data-theme="dark"] {
+  --background-color: rgb(27, 27, 31);
+  --textColor: rgb(223, 223, 214);
+}
+
+:root {
+    /* Базовые настройки шрифта */
+  --baseFontSize: 8px; /* 1rem */
+  --baseFontFamily: "Gotham Pro", sans-serif;
+  --baseLineHeight: 1.5;
+  --baseFontWeight: normal;
+  --fz36: clamp(3.5rem, 6vw, 4.5rem);
+  --fz32: clamp(3rem, 3vw, 4rem);
+  --fz24: clamp(2.25rem, 2vw, 3rem);
+  --fz18: 2.25rem;
+  --fz16: 2rem;
+
+    /* Отступы */
+  --spacingXXL: 6rem;
+  --spacingXL: 5rem;
+  --spacingL: 4rem;
+  --spacingM: 3rem;
+  --spacingS: 2rem;
+  --spacingXS: 1rem;
+
+  /* Базовые настройки сетки */
+  --siteMaxWidth: 1920px;
+  --siteMinWidth: 360px;
+  --gridPadding: 112px;
+
+  @media(max-width: 1480px) {
+    --gridPadding: 8rem;
+  }
+
+  @media(max-width: 1024px) {
+    --gridPadding: 5rem;
+  }
+
+  @media(max-width: 768px) {
+    --gridPadding: 3rem;
+    --spacingXXL: 4rem;
+  }
+
+  @media(max-width: 480px) {
+    --gridPadding: 2rem;
+    --spacingS: 1.5rem;
+    --fz18: 2rem;
+    --fz16: 1.75rem;
+  }
+}

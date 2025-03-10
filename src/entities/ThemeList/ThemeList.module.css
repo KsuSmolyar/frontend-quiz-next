@@ -1,0 +1,10 @@
+.themeList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: var(--spacingS);
+
+    .themeListLink {
+        text-decoration: none;
+    }
+}

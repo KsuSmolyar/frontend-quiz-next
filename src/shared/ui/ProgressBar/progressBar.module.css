@@ -1,0 +1,28 @@
+.progressBar {
+    --progressBarMarginBottom: 5rem;
+    margin-bottom: var(--progressBarMarginBottom);
+
+    @media(max-width: 768px) {
+        --progressBarMarginBottom: 3rem;
+    }
+
+    .progressBarTitle {
+        margin-bottom: 2rem;
+    }
+
+    .progressBarList {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .progressBarItem {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: var(--colorGray10);
+    }
+
+    .solved {
+        background-color: var(--colorLight);
+    }
+}

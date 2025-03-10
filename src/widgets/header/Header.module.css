@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    border-bottom: 1px solid var(--textColor);
+
+     .headerContainer {
+        display: flex;
+        align-items: center;
+        padding-block: var(--spacingS); 
+        gap: var(--spacingS);
+    }
+
+     .headerTitle{
+        font-size: var(--fz36);
+    }
+
+    .headerLogoBlock {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+    }
+
+    .headerTogglers {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-left: auto;
+    }
+
+    .dropdownContent {
+        text-align: center;
+
+        /* li {
+            cursor: pointer;
+            transition: all 0.2s linear;
+
+            &:hover {
+                scale: 1.2;
+            }
+        } */
+    }
+
+    .dropdownContentItem {
+        cursor: pointer;
+        transition: all 0.2s linear;
+
+        &:hover {
+            scale: 1.2;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.togglerTheme {
+    .togglerThemeSlider {
+        background-color: var(--colorYellow);
+
+        &:before,
+            &:after {
+                content: "🔅";
+            }
+    }
+
+    .togglerThemeWave {
+        &::after,
+        &::before {
+            position: absolute;
+            opacity: 0.4;
+        }
+
+        &::after {
+            content: "☆.。.";
+            top: -0.5rem;
+            left: 15%;
+        }
+
+        &::before {
+            content: ".。.";
+            top: 0.85rem;
+            left: 13%;
+        }
+    }
+}
+
+input:checked ~ .togglerThemeWave {
+    background-color: var(--colorDarkBlue);
+}
+
+input:checked ~ .togglerThemeSlider {
+    &:before,
+    &:after {
+      content: "🌙";
+    }
+}

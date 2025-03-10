@@ -1,0 +1,34 @@
+:root {
+    --colorBaseWhite: #fff;
+    --colorGreen: rgb(0, 168, 132);
+    --colorRed: #f94949;
+    --colorDarkBlue: #114d74;
+    --colorYellow: #f6e47cfc;
+    --background-color: #fafafa;
+    --textColor: rgb(27, 27, 31);
+    --colorWhite: #222;
+    --colorBlack: #fff;
+    --colorDark: rgb(223, 223, 214);
+    --colorLight: rgb(27, 27, 31);
+    --colorGray10: rgb(145 145 145 / 40%);
+}
+
+/* :root[data-theme="light"] {
+    --background-color: #fafafa;
+    --textColor: rgb(27, 27, 31);
+    --colorWhite: #222;
+    --colorBlack: #fff;
+    --colorDark: rgb(223, 223, 214);
+    --colorLight: rgb(27, 27, 31);
+    --colorGray10: rgb(145 145 145 / 40%);
+  } */
+  
+  :root[data-theme="dark"] {
+    --background-color: rgb(27, 27, 31);
+    --textColor: rgb(223, 223, 214);
+    --colorWhite: #fff;
+    --colorBlack: #222;
+    --colorDark: rgb(27, 27, 31);
+    --colorLight: rgb(223, 223, 214);
+    --colorGray10: rgb(145 145 145 / 10%);
+  }

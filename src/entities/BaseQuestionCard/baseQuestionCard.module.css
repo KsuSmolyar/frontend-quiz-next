@@ -1,0 +1,46 @@
+.baseQuestionCard {
+    --baseQuestionCardFormGap: 3rem;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media(max-width: 768px) {
+        --baseQuestionCardFormGap: 2rem;
+    }
+
+    .baseQuestionCardForm {
+        display: flex;
+        flex-direction: column;
+        gap: var(--baseQuestionCardFormGap);
+        padding: var(--spacingS);
+        border: 1px solid var(--colorLight);
+        border-radius: 1rem;
+    }
+
+    .baseQuestionCardTitle {
+        font-weight: 600;
+        font-size: var(--fz24);
+    }
+
+    .baseQuestionCardBtn {
+        margin-left: auto;
+    }
+
+    .isHide {
+        display: none;
+    }
+
+    .baseQuestionCardLoader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.baseQuestionCard.disabledCard {
+    pointer-events: none;
+    opacity: 0.4;
+}
