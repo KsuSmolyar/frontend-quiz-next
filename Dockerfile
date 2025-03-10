@@ -11,9 +11,9 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package*.json ./
-RUN  npm install
-RUN npm install --cpu=x64 --os=linux --libc=glibc sharp
-RUN npm install --cpu=x64 --os=linux --libc=musl sharp
+RUN  pnpm install
+# RUN npm install --include=optional sharp
+# RUN npm install --os=linux --libc=musl --cpu=x64 sharp
 # RUN npm install --cpu=arm64 --os=linux --libc=musl sharp
 
 # Rebuild the source code only when needed
@@ -27,7 +27,7 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN npm run build
+RUN pnpm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner

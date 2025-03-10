@@ -54,7 +54,8 @@
       "os": [
         "win32",
         "darwin",
-        "current"
+        "current",
+        "linux"
       ],
       "cpu": [
         "x64",
