@@ -27,7 +27,7 @@ export const MatchQuestionCardDropItem = ({
     drop(data: { data: string; index: number }) {
       setDraggedElement({ text: data.data, index: data.index })
       if (draggedElement) {
-        onAddVariant({ text: draggedElement.text, id: draggedElement.index })
+        onAddVariant({ text: draggedElement.text, id: draggedElement.index.toString() })
       }
       onRemoveVariant({ text: data.data })
       setUserAnswer(index, data.index)

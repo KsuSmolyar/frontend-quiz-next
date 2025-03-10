@@ -12,7 +12,7 @@ import useSWRMutation from 'swr/mutation'
 export const QuestionCards = ({ themesData, theme }: QuestionCardsProps) => {
   // const [postAnswer, { data, isLoading, reset }] = usePostAnswerMutation()
 
-  const { trigger, isMutating, data, reset, error } = useSWRMutation('answer', postFetcher)
+  const { trigger, isMutating, data, reset } = useSWRMutation('answer', postFetcher)
 
   const [userTotalAnswers, setUserTotalAnswers] = useState<number[]>([])
   const [correctUserAnswers, setCorrectUserAnswers] = useState(0)
@@ -41,7 +41,6 @@ export const QuestionCards = ({ themesData, theme }: QuestionCardsProps) => {
 
   const handleSubmit = () => {
     if (theme && questionCardData) {
-      //пост запрос
       trigger({ theme, id: questionCardData.id })
     }
     handleSetSolvedQuestions()
