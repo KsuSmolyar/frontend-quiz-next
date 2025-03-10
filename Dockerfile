@@ -11,7 +11,8 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package*.json ./
-RUN  pnpm install
+RUN npm install -g pnpm@latest-10
+RUN pnpm install
 # RUN npm install --include=optional sharp
 # RUN npm install --os=linux --libc=musl --cpu=x64 sharp
 # RUN npm install --cpu=arm64 --os=linux --libc=musl sharp
