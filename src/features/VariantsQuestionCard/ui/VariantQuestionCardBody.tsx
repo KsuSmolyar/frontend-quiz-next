@@ -13,21 +13,21 @@ export const VariantsQuestionCardBody = ({
     <ul className={styles.variantsQuestionCardBody}>
       {variants.map((variant, index) => {
         return (
-          <li key={index + variant.name}>
+          <li key={index + (variant?.name ?? '')}>
             {type === 'single' ? (
               <RadioBtn
                 isCorrect={data?.indexes.includes(index)}
                 isWrong={data && !data.indexes.includes(index)}
                 disabled={!!data || isLoading}
-                labelText={variant.text}
-                name={variant.name}
+                labelText={variant.text ?? ''}
+                name={variant.name ?? ''}
               />
             ) : (
               <Checkbox
                 isCorrect={data?.indexes.includes(index)}
                 isWrong={data && !data.indexes.includes(index)}
                 disabled={!!data || isLoading}
-                labelText={variant.text}
+                labelText={variant.text ?? ''}
               />
             )}
           </li>

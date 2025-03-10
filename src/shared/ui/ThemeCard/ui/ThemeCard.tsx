@@ -2,9 +2,9 @@ import Image from 'next/image'
 import { ThemeCardProps } from '../config/types'
 import styles from '../ThemeCard.module.css'
 
-export const ThemeCard = ({ _id, title, description, count }: ThemeCardProps) => {
+export const ThemeCard = ({ id, title, description, count }: ThemeCardProps) => {
   return (
-    <article className={styles.themeCard} id={_id}>
+    <article className={styles.themeCard} id={id}>
       <div className={styles.themeCardContainer}>
         <Image
           className={styles.themeCardImg}
