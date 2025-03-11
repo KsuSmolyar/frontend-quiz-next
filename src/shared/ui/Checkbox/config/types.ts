@@ -1,7 +1,7 @@
-import { InputHTMLAttributes } from "react"
+import { InputHTMLAttributes } from 'react'
 
-export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "id"> & {
+export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'id'> & {
   labelText: string
   isCorrect?: boolean
-  isWrong?: boolean
+  isWrong?: boolean | null
 }

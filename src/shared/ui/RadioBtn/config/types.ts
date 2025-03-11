@@ -1,8 +1,8 @@
-import { InputHTMLAttributes } from "react"
+import { InputHTMLAttributes } from 'react'
 
 export type RadioBtnProps = InputHTMLAttributes<HTMLInputElement> & {
   labelText: string
   name: string
   isCorrect?: boolean
-  isWrong?: boolean
+  isWrong?: boolean | null
 }
