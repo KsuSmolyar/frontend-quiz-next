@@ -2,17 +2,8 @@ import { useDrop } from 'react-dnd'
 import styles from '../matchQuestionCard.module.css'
 import { useState } from 'react'
 import classNames from 'classnames'
-import { VariantAnswer } from '../../../shared/types'
 import { MatchQuestionCardDragItem } from './MatchQuestionCardDragItem'
-
-type MatchQuestionCardDropItemProps = {
-  onRemoveVariant: (variant: VariantAnswer) => void
-  index: number
-  setUserAnswer: (questionIndex: number, answerIndex: number) => void
-  onAddVariant: (variant: VariantAnswer) => void
-  isCorrect: boolean | undefined
-  isCanDrag: boolean
-}
+import { MatchQuestionCardDropItemProps } from '../config/types'
 export const MatchQuestionCardDropItem = ({
   onRemoveVariant,
   index,

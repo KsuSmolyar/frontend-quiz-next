@@ -3,13 +3,9 @@ import styles from '../dropdown.module.css'
 import classNames from 'classnames'
 import { ArrowDown } from '../../Icons'
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick'
+import { DropdownProps } from '../config/types'
 
-interface IDropdownProps {
-  children: React.ReactElement
-  label: string
-  variant?: 'outline'
-}
-export const Dropdown = ({ children, label, variant }: IDropdownProps) => {
+export const Dropdown = ({ children, label, variant }: DropdownProps) => {
   const menuRef = useOutsideClick<HTMLDivElement>(() => setIsVisible(false))
   const [isVisible, setIsVisible] = useState<boolean>(false)
 

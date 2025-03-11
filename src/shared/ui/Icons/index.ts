@@ -1,3 +1,3 @@
-import { CheckMark, Pencil, Menu, Close, ArrowDown } from "./ui/Icons"
+import { CheckMark, Pencil, Menu, Close, ArrowDown, TubeSpinner } from "./ui/Icons"
 
-export { CheckMark, Pencil, Menu, Close, ArrowDown }
+export { CheckMark, Pencil, Menu, Close, ArrowDown, TubeSpinner }

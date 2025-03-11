@@ -1,17 +1,22 @@
-// import { useThemeContext } from '../../../shared/contexts'
-// import { themes } from '../../../shared/contexts/ThemeContext'
+import { ThemeModes, themes } from '@/shared/types'
 import { Toggler } from '../../../shared/ui/Toggler/ui/Toggler'
 import styles from '../themeToggler.module.css'
+import { useEffect, useState } from 'react'
+import { getTheme } from '@/shared/utils/getTheme'
 
 export const ThemeToggler = () => {
-  //   const { theme, handleSetTheme } = useThemeContext()
+  const [theme, setTheme] = useState<ThemeModes>(getTheme)
 
   const handleChange = () => {
-    //TODO
-    console.log('handleChange')
-    // if (theme === themes.light) handleSetTheme(themes.dark)
-    // if (theme === themes.dark) handleSetTheme(themes.light)
+    if (theme === themes.light) setTheme(themes.dark)
+    if (theme === themes.dark) setTheme(themes.light)
   }
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
   return (
     <Toggler
       className={styles.togglerTheme}
@@ -19,7 +24,7 @@ export const ThemeToggler = () => {
       waveClassName={styles.togglerThemeWave}
       id={'themeToggler'}
       onChange={handleChange}
-      value={true}
+      value={theme === themes.dark}
     />
   )
 }

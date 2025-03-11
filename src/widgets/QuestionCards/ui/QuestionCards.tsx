@@ -3,16 +3,15 @@
 import { useEffect, useMemo, useState } from 'react'
 import { MatchQuestionCard } from '@/features/MatchQuestionCard'
 import { VariantsQuestionCard } from '@/features/VariantsQuestionCard'
-import styles from '../questionCards.module.css'
 import { QuestionCardsProps } from '../config/types'
 import { ProgressBar } from '@/shared/ui/ProgressBar'
-import { postFetcher } from '@/shared/api'
-import useSWRMutation from 'swr/mutation'
+import { postAnswer } from '@/shared/api/action'
+import { Answer } from '@/shared/types'
+import { QuestionCardCompletion } from './QuestionCardCompletion'
 
 export const QuestionCards = ({ themesData, theme }: QuestionCardsProps) => {
-  // const [postAnswer, { data, isLoading, reset }] = usePostAnswerMutation()
-
-  const { trigger, isMutating, data, reset } = useSWRMutation('answer', postFetcher)
+  const [isLoading, setIsLoading] = useState(false)
+  const [answerData, setAnswerData] = useState<Answer | null>(null)
 
   const [userTotalAnswers, setUserTotalAnswers] = useState<number[]>([])
   const [correctUserAnswers, setCorrectUserAnswers] = useState(0)
@@ -32,46 +31,44 @@ export const QuestionCards = ({ themesData, theme }: QuestionCardsProps) => {
 
   const handleNextClick = () => {
     setCurrentIndex((prev) => prev + 1)
-    reset()
+    setAnswerData(null)
   }
 
   const handleSetSolvedQuestions = () => {
     setSolvedQuestions((prev) => prev + 1)
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (theme && questionCardData) {
-      trigger({ theme, id: questionCardData.id })
+      setIsLoading(true)
+      const { docs } = await postAnswer({ theme, id: questionCardData.id })
+      setAnswerData(docs[0])
+      setIsLoading(false)
     }
     handleSetSolvedQuestions()
   }
 
   useEffect(() => {
-    if (data) {
-      const isCorrect = userTotalAnswers.every((item, index) => item === data.indexes[index])
+    if (answerData) {
+      const isCorrect = userTotalAnswers.every((item, index) => item === answerData.indexes[index])
       if (isCorrect) {
         setCorrectUserAnswers((prev) => prev + 1)
       }
     }
-  }, [data, userTotalAnswers])
+  }, [answerData, userTotalAnswers])
 
   return (
     <>
       <ProgressBar solvedQuestions={solvedQuestions} totalQuestions={themesData?.length ?? 0} />
-      {isLastQuestion && (
-        <div className={styles.questionCardsCompletion}>
-          <h2>Викторина завершена!</h2>
-          <p>Количество правильных ответов: {correctUserAnswers}</p>
-        </div>
-      )}
+      {isLastQuestion && <QuestionCardCompletion correctUserAnswers={correctUserAnswers} />}
       {questionCardData &&
         (questionCardData.type === 'match' ? (
           <MatchQuestionCard
             {...questionCardData}
             setUserTotalAnswers={setUserTotalAnswers}
             onSubmit={handleSubmit}
-            data={data}
-            isLoading={isMutating}
+            data={answerData}
+            isLoading={isLoading}
             isLastCard={isLastQuestion}
             onNextClick={handleNextClick}
           />
@@ -80,8 +77,8 @@ export const QuestionCards = ({ themesData, theme }: QuestionCardsProps) => {
             {...questionCardData}
             setUserTotalAnswers={setUserTotalAnswers}
             onSubmit={handleSubmit}
-            data={data}
-            isLoading={isMutating}
+            data={answerData}
+            isLoading={isLoading}
             isLastCard={isLastQuestion}
             onNextClick={handleNextClick}
           />

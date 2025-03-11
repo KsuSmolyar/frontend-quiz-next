@@ -4,6 +4,7 @@ import { Btn } from '../../../shared/ui/Btn'
 import { useRef } from 'react'
 import { Loader } from '../../../shared/ui/Loader'
 import { BaseQuestionCardProps } from '../config/types'
+import { RichText } from '@payloadcms/richtext-lexical/react'
 
 export const BaseQuestionCard = ({
   isLastCard,
@@ -82,7 +83,11 @@ export const BaseQuestionCard = ({
         )}
       </form>
       {matchVariantsSlot}
-      {data && <div className={styles.baseQuestionCardDescription}>{data.description}</div>}
+      {data && (
+        <div className={styles.baseQuestionCardDescription}>
+          <RichText data={data.descriptionRich} />
+        </div>
+      )}
       {isLoading && <Loader className={styles.baseQuestionCardLoader} />}
     </article>
   )

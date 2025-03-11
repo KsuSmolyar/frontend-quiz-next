@@ -1,4 +1,6 @@
 .header {
+    --headerLogoUnderlineColor: transparent;
+
     display: flex;
     border-bottom: 1px solid var(--textColor);
 
@@ -17,7 +19,12 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        text-decoration: none;
+        text-decoration: underline var(--headerLogoUnderlineColor);
+        transition: text-decoration 0.3s linear;
+
+        &:hover {
+            --headerLogoUnderlineColor: currentColor;
+        }
     }
 
     .headerTogglers {
@@ -29,15 +36,6 @@
 
     .dropdownContent {
         text-align: center;
-
-        /* li {
-            cursor: pointer;
-            transition: all 0.2s linear;
-
-            &:hover {
-                scale: 1.2;
-            }
-        } */
     }
 
     .dropdownContentItem {

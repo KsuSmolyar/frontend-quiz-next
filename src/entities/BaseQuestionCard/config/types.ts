@@ -1,17 +1,20 @@
-import { Answer } from "../../../shared/types"
+import { Answer } from '../../../shared/types'
 
-export type BaseQuestionCardProps = {
-    isLastCard: boolean
-    question: string
-    handleChangeForm?: (e:React.FormEvent<HTMLFormElement>) => void
-    onNextClick: () => void
-    data?: Answer 
-    isBtnDisabled: boolean
-    cardBodySlot: React.ReactElement
-    matchVariantsSlot?: React.ReactElement
-    onSubmit: () => void
-    isLoading: boolean
-    setBtnDisabled?: () => void
-    setUserTotalAnswers: React.Dispatch<React.SetStateAction<number[]>>
-    userAnswersFromMatch?: number[]
-  }
+export type QuestionCardProps = {
+  isLastCard: boolean
+  question: string
+  onNextClick: () => void
+  data?: Answer | null
+  onSubmit: () => void
+  isLoading: boolean
+  setUserTotalAnswers: React.Dispatch<React.SetStateAction<number[]>>
+}
+
+export type BaseQuestionCardProps = QuestionCardProps & {
+  handleChangeForm?: (e: React.FormEvent<HTMLFormElement>) => void
+  isBtnDisabled: boolean
+  cardBodySlot: React.ReactElement
+  matchVariantsSlot?: React.ReactElement
+  setBtnDisabled?: () => void
+  userAnswersFromMatch?: number[]
+}

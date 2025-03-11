@@ -10,8 +10,8 @@ export const JavaScriptAnswers: CollectionConfig = {
       required: true,
     },
     {
-      name: 'description',
-      type: 'text',
+      name: 'descriptionRich',
+      type: 'richText',
       required: true,
     },
     {

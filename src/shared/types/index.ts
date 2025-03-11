@@ -1,3 +1,5 @@
+import { JavascriptAnswer, ReactAnswer } from '@/payload-types'
+
 export type Theme = {
   id: string
   title: string
@@ -30,7 +32,11 @@ export type QuestionData = {
   id: string
 }
 
-export type Answer = {
-  indexes: number[]
-  description: string
-}
+export type Answer = ReactAnswer | JavascriptAnswer
+
+export type ThemeModes = 'dark' | 'light'
+
+export const themes = {
+  dark: 'dark',
+  light: 'light',
+} as const

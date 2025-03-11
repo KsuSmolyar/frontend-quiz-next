@@ -1,5 +1,9 @@
 import { Loader } from '@/shared/ui/Loader'
 
 export default function Loading() {
-  return <Loader />
+  return (
+    <div className={'main container'}>
+      <Loader />
+    </div>
+  )
 }

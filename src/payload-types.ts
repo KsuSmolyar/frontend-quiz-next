@@ -199,7 +199,21 @@ export interface Javascript {
 export interface JavascriptAnswer {
   id: string;
   questionId: string;
-  description: string;
+  descriptionRich: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   indexes: number[];
   updatedAt: string;
   createdAt: string;
@@ -233,7 +247,21 @@ export interface React {
 export interface ReactAnswer {
   id: string;
   questionId: string;
-  description: string;
+  descriptionRich: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   indexes: number[];
   updatedAt: string;
   createdAt: string;
@@ -388,7 +416,7 @@ export interface JavascriptSelect<T extends boolean = true> {
  */
 export interface JavascriptAnswersSelect<T extends boolean = true> {
   questionId?: T;
-  description?: T;
+  descriptionRich?: T;
   indexes?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -422,7 +450,7 @@ export interface ReactSelect<T extends boolean = true> {
  */
 export interface ReactAnswersSelect<T extends boolean = true> {
   questionId?: T;
-  description?: T;
+  descriptionRich?: T;
   indexes?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -1,16 +1,7 @@
 import styles from '../matchQuestionCard.module.css'
-import { GivenVariant, VariantAnswer } from '@/shared/types'
 import { MatchQuestionCardDropItem } from './MatchQuestionCardDropItem'
+import { MatchQuestionCardBodyProps } from '../config/types'
 
-type MatchQuestionCardBodyProps = {
-  given?: GivenVariant[] | null
-  onRemoveVariant: (variant: VariantAnswer) => void
-  setUserAnswer: (questionIndex: number, answerIndex: number) => void
-  onAddVariant: (variant: VariantAnswer) => void
-  answers?: number[]
-  userAnswers: number[]
-  isCanDrag: boolean
-}
 export const MatchQuestionCardBody = ({
   given,
   onRemoveVariant,

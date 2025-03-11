@@ -1,13 +1,7 @@
 import { useDrag } from 'react-dnd'
 import styles from '../matchQuestionCard.module.css'
 import classNames from 'classnames'
-
-type MatchQuestionCardDragItemProps = {
-  data: string
-  clearDraggedElement?: () => void
-  index?: string | null
-  isCanDrag?: boolean
-}
+import { MatchQuestionCardDragItemProps } from '../config/types'
 export const MatchQuestionCardDragItem = ({
   data,
   clearDraggedElement,

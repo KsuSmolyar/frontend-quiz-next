@@ -1,18 +1,12 @@
 import classNames from 'classnames'
 import styles from '../loader.module.css'
 import { LoaderProps } from '../config/types'
-import Image from 'next/image'
+import { TubeSpinner } from '../../Icons'
 
 export const Loader = ({ className }: LoaderProps) => {
   return (
     <div className={classNames(styles.loader, className)}>
-      <Image
-        className={styles.loaderImg}
-        src={'/tube-spinner.svg'}
-        alt={'лоадер'}
-        width={100}
-        height={100}
-      />
+      <TubeSpinner className={styles.loaderIcon} />
     </div>
   )
 }

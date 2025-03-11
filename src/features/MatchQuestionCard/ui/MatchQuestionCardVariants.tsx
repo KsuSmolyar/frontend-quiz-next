@@ -1,14 +1,9 @@
 import { useDrop } from 'react-dnd'
-import { VariantAnswer } from '../../../shared/types'
 import styles from '../matchQuestionCard.module.css'
 import classNames from 'classnames'
 import { MatchQuestionCardDragItem } from './MatchQuestionCardDragItem'
+import { MatchQuestionCardVariantsProps } from '../config/types'
 
-type MatchQuestionCardVariantsProps = {
-  variants: VariantAnswer[]
-  onAddVariant: (variant: VariantAnswer) => void
-  isVariantsHide: boolean
-}
 export const MatchQuestionCardVariants = ({
   variants,
   onAddVariant,
