@@ -1,5 +1,8 @@
 import { ThemeModes, themes } from '../types'
 export const getTheme = (): ThemeModes => {
+  if (!window) {
+    return themes.dark
+  }
   const theme = window?.localStorage?.getItem('theme') as ThemeModes
   if (Object.values(themes).includes(theme)) return theme
 
