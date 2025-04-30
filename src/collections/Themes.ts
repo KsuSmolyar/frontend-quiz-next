@@ -19,5 +19,10 @@ export const Themes: CollectionConfig = {
       type: 'number',
       required: true,
     },
+    {
+      name: 'locale',
+      type: 'text',
+      required: true,
+    },
   ],
 }

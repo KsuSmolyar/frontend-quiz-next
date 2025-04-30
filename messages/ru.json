@@ -1,0 +1,10 @@
+{
+  "IndexPage": {
+    "title": "Темы вопросов",
+    "themeCardTitle": "Количество вопросов"
+  },
+  "ThemePage": {
+    "progressBarText": "Решено",
+    "progressBarTextTwo": "из"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "IndexPage": {
+    "title": "Topics of questions",
+    "themeCardTitle": "Number of questions"
+  },
+  "ThemePage": {
+    "progressBarText": "Solved",
+    "progressBarTextTwo": "from"
+  }
+}

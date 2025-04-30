@@ -167,6 +167,7 @@ export interface Theme {
   title: string;
   description: string;
   count: number;
+  locale: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -384,6 +385,7 @@ export interface ThemesSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   count?: T;
+  locale?: T;
   updatedAt?: T;
   createdAt?: T;
 }

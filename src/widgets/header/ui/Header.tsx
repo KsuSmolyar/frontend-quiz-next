@@ -1,10 +1,10 @@
 'use client'
 import classNames from 'classnames'
 import styles from '../Header.module.css'
-import { Dropdown } from '@/shared/ui/Dropdown'
 import Link from 'next/link'
 import { Logo } from '@/shared/ui/Logo'
 import { ThemeToggler } from '@/entities/ThemeToggler'
+import { LocaleToggler } from './LocaleToggler'
 
 export const Header = () => {
   return (
@@ -14,17 +14,9 @@ export const Header = () => {
           <Logo />
           <h2 className={styles.headerTitle}>FrontendQuiz</h2>
         </Link>
-
-        {/* <Btn>Ru Eng</Btn> */}
         <div className={styles.headerTogglers}>
-          {/* <LanguageToggler /> */}
           <ThemeToggler />
-          <Dropdown label={'Ru'} variant="outline">
-            <ul className={styles.dropdownContent}>
-              <li className={styles.dropdownContentItem}>Ru</li>
-              <li className={styles.dropdownContentItem}>En</li>
-            </ul>
-          </Dropdown>
+          <LocaleToggler />
         </div>
       </div>
     </header>

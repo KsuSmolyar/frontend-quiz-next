@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useImperativeHandle, useState } from 'react'
 import styles from '../dropdown.module.css'
 import classNames from 'classnames'
 import { ArrowDown } from '../../Icons'
 import { useOutsideClick } from '@/shared/hooks/useOutsideClick'
 import { DropdownProps } from '../config/types'
 
-export const Dropdown = ({ children, label, variant }: DropdownProps) => {
+export const Dropdown = ({ children, label, variant, ref }: DropdownProps) => {
   const menuRef = useOutsideClick<HTMLDivElement>(() => setIsVisible(false))
   const [isVisible, setIsVisible] = useState<boolean>(false)
+  useImperativeHandle(ref, () => {
+    return {
+      closeDropdown: () => setIsVisible(false),
+    }
+  }, [])
 
   const classes = classNames(styles.dropdown, {
     [styles.outline]: variant === 'outline',

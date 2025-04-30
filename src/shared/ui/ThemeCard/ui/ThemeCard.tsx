@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import { ThemeCardProps } from '../config/types'
 import styles from '../ThemeCard.module.css'
+import { useTranslations } from 'next-intl'
 
 export const ThemeCard = ({ id, title, description, count }: ThemeCardProps) => {
+  const t = useTranslations('IndexPage')
   return (
     <article className={styles.themeCard} id={id}>
       <div className={styles.themeCardContainer}>
@@ -17,7 +19,9 @@ export const ThemeCard = ({ id, title, description, count }: ThemeCardProps) => 
       </div>
       <div className={styles.themeCardContent}>
         <p>{description}</p>
-        <span>Количество вопросов: {count}</span>
+        <span>
+          {t('themeCardTitle')}: {count}
+        </span>
       </div>
     </article>
   )

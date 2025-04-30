@@ -34,16 +34,4 @@
         margin-left: auto;
     }
 
-    .dropdownContent {
-        text-align: center;
-    }
-
-    .dropdownContentItem {
-        cursor: pointer;
-        transition: all 0.2s linear;
-
-        &:hover {
-            scale: 1.2;
-        }
-    }
 }
